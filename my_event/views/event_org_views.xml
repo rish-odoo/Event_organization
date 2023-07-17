@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="event_org_action" model="ir.actions.act_window">
+        <field name="name">Events</field>
+        <field name="res_model">event.org</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new Property, the first step of a new property!
+            </p>
+        </field>
+    </record>
+
+
+    <!--tree-->
+    <record id="event_org_view_tree" model="ir.ui.view">
+        <field name="name">event.org.view.tree</field>
+        <field name="model">event.org</field>
+        <field name="arch" type="xml">
+            <tree string="treeeeeee">
+                <field name="name" />
+                <field name="date" />
+                <field name="budget" />
+                <field name="venue" />
+            </tree>
+        </field>
+    </record>
+
+
+    <!--form -->
+    <record id="event_org_view_form" model="ir.ui.view">
+        <field name="name">event.org.view.form</field>
+        <field name="model">event.org</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name" />
+                        <field name="date" />
+                        <field name="budget" />
+                        <field name="venue" />
+                        <!-- <field name="custmer"/> -->
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <menuitem id="first_level_menu" name="Event Org">
+        <menuitem id="menu_finance_receivables" name="Event Type">
+            <menuitem id="menu_pro1" name="Wedding Event" action="event_type_action" />
+            <menuitem id="menu_pro2" name="Corporate Event" action="event_type_action" />
+            <menuitem id="menu_pro3" name="Birthday Party" action="event_type_action" />
+            <menuitem id="menu_pro4" name="Concert" action="event_type_action" />
+            <menuitem id="menu_pro5" name="Other Event" action="event_type_action" />
+        </menuitem>
+    </menuitem>
+
+    <menuitem id="menu_production" name="Production" parent="first_level_menu" />
+    <menuitem id="menu_venue" name="Venue Booking" parent="menu_production"
+        action="event_org_action" />
+    <!-- <menuitem id="menu_artist" name="Artist Management" parent="menu_production"
+        action="event_org_action" /> -->
+
+    <!-- <menuitem id="menu_setting" name="Setting" parent="first_level_menu" />
+    <menuitem id="menu_pro_type" name="Venue Booking" parent="menu_setting"
+        action="event_org_action" /> -->
+
+
+</odoo>

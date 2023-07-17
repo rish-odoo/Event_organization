@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <data noupdate="1">
+        <record id="demo_data1" model="event.org">
+            <field name="name">Wedding Event</field>
+            <field name="date">2020-02-02</field>
+            <field name="budget">1600000</field>
+            <!-- <field name="attendees">500</field> -->
+            <field name="venue">Garden</field>
+            <!-- <field name="custmer">100</field> -->
+        </record>
+
+        <record id="demo_data2" model="event.org">
+            <field name="name">Wedding Event</field>
+            <field name="date">2020-02-02</field>
+            <field name="budget">1600000</field>
+            <!-- <field name="attendees">500</field> -->
+            <field name="venue">Garden</field>
+            <!-- <field name="custmer">100</field> -->
+        </record>
+
+        <record id="demo_data_event_type1"
+            model="event.type">
+            <field name="name">wedding</field>
+        </record>
+        <record
+            id="demo_data_event_type2" model="event.type">
+            <field name="name">Birthday party</field>
+        </record>
+        <record
+            id="demo_data_event_type3" model="event.type">
+            <field name="name">Corporate Event</field>
+        </record>
+        <record
+            id="demo_data_property_type4" model="event.type">
+            <field name="name">Concert</field>
+        </record>
+
+        <!-- <record id="demo_data_services" model="services">
+            <field name="partner_id" ref="base.res_partner_12" />
+            <field name="property_id" ref="real_estate.demo_data1" />
+            <field name="price">10000</field>
+            <field name="Validity">14</field>
+        </record>
+        <record id="demo_data_offer2" model="estate.property.offer">
+            <field name="partner_id" ref="base.res_partner_12" />
+            <field name="property_id" ref="real_estate.demo_data1" />
+            <field name="price">1500000</field>
+            <field name="Validity">14</field>
+        </record>
+        <record id="demo_data_offer3" model="estate.property.offer">
+            <field name="partner_id" ref="base.res_partner_2" />
+            <field name="property_id" ref="real_estate.demo_data1" />
+            <field name="price">1500001</field>
+            <field name="Validity">14</field>
+        </record> -->
+        
+    </data>
+</odoo>
