@@ -14,7 +14,7 @@
 
 
     <!--tree-->
-    <record id="event_org_view_tree" model="ir.ui.view">
+    <!-- <record id="event_org_view_tree" model="ir.ui.view">
         <field name="name">event.org.view.tree</field>
         <field name="model">event.org</field>
         <field name="arch" type="xml">
@@ -25,7 +25,7 @@
                 <field name="venue" />
             </tree>
         </field>
-    </record>
+    </record> -->
 
 
     <!--form -->
@@ -40,7 +40,8 @@
                         <field name="date" />
                         <field name="budget" />
                         <field name="venue" />
-                        <!-- <field name="custmer"/> -->
+                        <field name="attendees"/>
+                        <field name="event_type_id"/>
                     </group>
                 </sheet>
             </form>

@@ -7,7 +7,7 @@
             <field name="date">2020-02-02</field>
             <field name="budget">1600000</field>
             <!-- <field name="attendees">500</field> -->
-            <field name="venue">Garden</field>
+            <field name="venue">G</field>
             <!-- <field name="custmer">100</field> -->
         </record>
 
@@ -16,7 +16,7 @@
             <field name="date">2020-02-02</field>
             <field name="budget">1600000</field>
             <!-- <field name="attendees">500</field> -->
-            <field name="venue">Garden</field>
+            <field name="venue">H</field>
             <!-- <field name="custmer">100</field> -->
         </record>
 

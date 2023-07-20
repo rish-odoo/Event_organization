@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="event_service_action" model="ir.actions.act_window">
+        <field name="name">Event services</field>
+        <field name="res_model">event.services</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p>
+                There is no records for the Event services.
+            </p>
+        </field>
+    </record>
+
+    <record id="event_services_view_tree" model="ir.ui.view">
+        <field name="name">event.services.view.tree</field>
+        <field name="model">event.services</field>
+        <field name="arch" type="xml">
+            <tree >
+                <field name="catering" string="catering"></field>
+                <field name="partner_id" string="Partner"></field>
+                <!-- <field name="event_id" string="event_id"></field> -->
+            </tree>
+        </field>
+    </record>
+
+    <record id="event_services_view_form" model="ir.ui.view">
+        <field name="name">Services</field>
+        <field name="model">event.services</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="catering" />
+                        <field name="partner_id" />
+                        <!-- <field name="event_id"/> -->
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

@@ -34,11 +34,11 @@
                     <group>
                         <field name="name" />
                         <field name="Start_date" />
-                        <!-- <field name ="end_date"/> -->
+                        <field name="end_date"/>
                         <field name="budget" />
                         <field name="venue" />
                         <field name="no_of_guest" />
-                        <field name="extra_activity" />
+                        <field name="event_ids"/>
                     </group>
                 </sheet>
             </form>
