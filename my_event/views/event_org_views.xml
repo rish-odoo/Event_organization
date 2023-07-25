@@ -7,26 +7,25 @@
         <field name="view_mode">tree,form</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
-                Create a new Property, the first step of a new property!
+                Create a new Event!
             </p>
         </field>
     </record>
 
-
-    <!--tree-->
-    <!-- <record id="event_org_view_tree" model="ir.ui.view">
+    <!--tree
+    view -->
+    <record id="event_org_view_tree" model="ir.ui.view">
         <field name="name">event.org.view.tree</field>
         <field name="model">event.org</field>
         <field name="arch" type="xml">
-            <tree string="treeeeeee">
+            <tree>
                 <field name="name" />
-                <field name="date" />
-                <field name="budget" />
-                <field name="venue" />
+                <field name="custmer" />
+                <field name="cu_m_email" />
+                <field name="cu_m_no" />
             </tree>
         </field>
-    </record> -->
-
+    </record>
 
     <!--form -->
     <record id="event_org_view_form" model="ir.ui.view">
@@ -34,39 +33,59 @@
         <field name="model">event.org</field>
         <field name="arch" type="xml">
             <form>
+                <header>
+                    <button name="action_confirm" type="object" string="Confirm"
+                        attrs="{'invisible':[('state','in',['CO','C'])]}" />
+                    <button name="action_cancel" type="object" string="Cancel"
+                        attrs="{'invisible':[('state','in',['CO','C'])]}" />
+                    <field name="state" widget="statusbar" statusbar_visible="CO,C,N" />
+                </header>
                 <sheet>
                     <group>
-                        <field name="name" />
-                        <field name="date" />
-                        <field name="budget" />
-                        <field name="venue" />
-                        <field name="attendees"/>
-                        <field name="event_type_id"/>
+                        <group>
+                            <field name="name" />
+                            <field name="date_from" />
+                            <field name="date_to"/>
+                        </group>
+                        <group>
+                            <field name="custmer" />
+                            <field name="cu_m_no" />
+                            <field name="cu_m_email" />
+                        </group>
+                        <group>
+                            <field name="event_type_id" />
+                        </group>
+                        <group>
+                            <field name="other_venue"/>
+                        </group>
+                        <notebook>
+                            <page string="Description">
+                                <group>
+                                    <field name="description" />
+                                    <field name="budget" />
+                                    <field name="attendees" />
+                                    <field name="active" />
+                                </group>
+                            </page>
+                            <page string="Services">
+                                    <field name='service_ids' />
+                            </page>
+                        </notebook>
                     </group>
                 </sheet>
             </form>
         </field>
     </record>
 
-    <menuitem id="first_level_menu" name="Event Org">
-        <menuitem id="menu_finance_receivables" name="Event Type">
-            <menuitem id="menu_pro1" name="Wedding Event" action="event_type_action" />
-            <menuitem id="menu_pro2" name="Corporate Event" action="event_type_action" />
-            <menuitem id="menu_pro3" name="Birthday Party" action="event_type_action" />
-            <menuitem id="menu_pro4" name="Concert" action="event_type_action" />
-            <menuitem id="menu_pro5" name="Other Event" action="event_type_action" />
+    <menuitem id="first_level_menu" name="Event Organization">
+        <menuitem id="menu_finance_receivables" name="Events">
+            <menuitem id="menue_pro" name="Events" action="event_org_action" />
         </menuitem>
     </menuitem>
 
     <menuitem id="menu_production" name="Production" parent="first_level_menu" />
-    <menuitem id="menu_venue" name="Venue Booking" parent="menu_production"
-        action="event_org_action" />
-    <!-- <menuitem id="menu_artist" name="Artist Management" parent="menu_production"
-        action="event_org_action" /> -->
-
-    <!-- <menuitem id="menu_setting" name="Setting" parent="first_level_menu" />
-    <menuitem id="menu_pro_type" name="Venue Booking" parent="menu_setting"
-        action="event_org_action" /> -->
-
-
+    <menuitem id="menu_event_type" name="Event Type" parent="menu_production"
+        action="my_event.event_type_action" />
+    <menuitem id="menu_event_venue" name="Event venue" parent="menu_production"
+        action="my_event.event_venue_action"></menuitem>
 </odoo>

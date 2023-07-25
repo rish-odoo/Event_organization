@@ -7,11 +7,10 @@ class event_type(models.Model):
     _description = "Event Type"
     _order = "name"
 
-    name = fields.Char("Event Name")
-    Start_date = fields.Date("Date")
-    end_date = fields.Date("Date")
-    budget = fields.Float("Your Budget")
-    venue= fields.Selection([('G','Garden'),('H','Hall'),('Hotel','Hotel'),('re','Resturent'),('cafe','Cafe')])
-    no_of_guest = fields.Integer("Number of Guest")
-    # event_ids=fields.One2many("event.org","event_type_id",String="Event Type")  
-      
+    name = fields.Char("Name of Event")
+    Start_date = fields.Date("Start Date")
+    end_date = fields.Date("End Date")
+    event_ids=fields.One2many("event.org","event_type_id",string="Event Type")
+    sequence=fields.Integer("Sequence")
+
+

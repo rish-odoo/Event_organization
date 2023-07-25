@@ -1,36 +1,33 @@
-<?xml version="1.0" encoding="utf-8"?>
+<!-- <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <record id="base.module_category_real_estate_brokerage" model="ir.module.category">
+    <record id="base.module_category_my_event_custmer" model="ir.module.category">
         <field name="description">Group access</field>
         <field name="sequence">9</field>
     </record>
 
-    <record id="estate_group_user" model="res.groups">
+    <record id="event_group_user" model="res.groups">
         <field name="name">Agent</field>
-        <field name="category_id" ref="base.module_category_real_estate_brokerage"></field>
+        <field name="category_id" ref="base.module_category_my_event_custmer"></field>
     </record>
 
 
-    <record id="estate_group_manager" model="res.groups">
+    <record id="event_group_manager" model="res.groups">
         <field name="name">Manager</field>
-        <field name="category_id" ref="base.module_category_real_estate_brokerage"></field>
-        <field name="implied_ids" eval="[(4,ref('estate_group_user'))]"></field>
+        <field name="category_id" ref="base.module_category_my_event_custmer"></field>
+        <field name="implied_ids" eval="[(4,ref('event_group_user'))]"></field>
     </record>
 
 
     <record id="rule_id_user" model="ir.rule">
         <field name="name">Rules for Agent/user</field>
-        <field name="model_id" ref="model_estate_property"></field>
-        <field name="groups" eval="[(4,ref('estate_group_user'))]"></field>
-        <field name="domain_force">['|',
-            ('buyer_id','=',user.id),('buyer_id','=',False)
-            ]</field>
+        <field name="model_id" ref="model_event_org"></field>
+        <field name="groups" eval="[(4,ref('event_group_user'))]"></field>
     </record>
 
     <record id="rule_id_manager" model="ir.rule">
         <field name="name">Rules for Manager</field>
-        <field name="model_id" ref="model_estate_property"></field>
-        <field name="groups" eval="[(4,ref('estate_group_manager'))]"></field>
+        <field name="model_id" ref="model_event_org"></field>
+        <field name="groups" eval="[(4,ref('event_group_manager'))]"></field>
         <field name="domain_force">[(1,'=',1)]</field>
     </record>
-</odoo>
+</odoo> -->

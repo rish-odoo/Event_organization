@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="event_venue_action" model="ir.actions.act_window">
+        <field name="name">Event Venue</field>
+        <field name="res_model">event.venue</field>
+        <field name="view_mode">form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new Property, the first step of a new property!
+            </p>
+        </field>
+    </record>
+
+    <record id="event_venue_view_form" model="ir.ui.view">
+        <field name="name">event.venue.view.tree</field>
+        <field name="model">event.venue</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="garden" />
+                            <field name="hall" />
+                        </group>
+                        <group>
+                            <field name="hotel" />
+                            <field name="restaurants" />
+                            <field name="cafe" />
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="venue Information">
+                            <group>
+                                <field name="ven_charg_for_garden"
+                                    attrs="{'invisible':[('garden','=',False)]}" />
+                                <field name="rooms"
+                                    attrs="{'invisible':[('garden','=',False)]}" />
+                                <field name="hall_capisity"
+                                    attrs="{'invisible':[('garden','=',False)]}" />
+                                <field name="capisity"
+                                    attrs="{'invisible':[('garden','=',False)]}" />
+                                <field name="location"
+                                    attrs="{'invisible':[('garden','=',False)]}" />
+                            </group>
+                            <group>
+                                <field name="ven_charg_for_hall"
+                                    attrs="{'invisible':[('hall','=',False)]}" />
+                                <field name="hall_capisity"
+                                    attrs="{'invisible':[('hall','=',False)]}" />
+                                <field name="location"
+                                    attrs="{'invisible':[('hall','=',False)]}" />
+                            </group>
+                            <group>
+                                <field name="ven_charg_for_hotel"
+                                    attrs="{'invisible':[('hotel','=',False)]}" />
+                                <field name="rooms"
+                                    attrs="{'invisible':[('hotel','=',False)]}" />
+                                <field name="hall_capisity"
+                                    attrs="{'invisible':[('hotel','=',False)]}" />
+                                <field name="capisity"
+                                    attrs="{'invisible':[('hotel','=',False)]}" />
+                                <field name="location"
+                                    attrs="{'invisible':[('hotel','=',False)]}" />
+                            </group>
+                            <group>
+                                <field name="ven_charg_for_res"
+                                    attrs="{'invisible':[('restaurants','=',False)]}" />
+                                <field name="rooms"
+                                    attrs="{'invisible':[('restaurants','=',False)]}" />
+                                <field name="hall_capisity"
+                                    attrs="{'invisible':[('restaurants','=',False)]}" />
+                                <field name="capisity"
+                                    attrs="{'invisible':[('restaurants','=',False)]}" />
+                                <field name="location"
+                                    attrs="{'invisible':[('restaurants','=',False)]}" />
+                            </group>
+                            <group>
+                                <field name="ven_charg_for_cafe"
+                                    attrs="{'invisible':[('cafe','=',False)]}" />
+                                <field name="capisity"
+                                    attrs="{'invisible':[('cafe','=',False)]}" />
+                                <field name="location"
+                                    attrs="{'invisible':[('cafe','=',False)]}" />
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>
